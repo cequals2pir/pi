@@ -1,193 +1,771 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Mozilla splash page</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <style>
-      /* header and body setup */
+<html lang="en-us" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Base, Basic Odds</title> <!-- tab title -->
+  <meta name="author" content="Chuurghuul">
+  <meta name="description" content="!!!"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2283%22%20width%3D%2283%22%20version%3D%221.1%22%20viewBox%3D%220%200%2045.65%2045.65%22%3E%3Cg%20style%3D%22fill%3Argb(140%2C153%2C166%22%3E%3Cpath%20transform%3D%22translate(-4.6085%20-4.7969)%22%20d%3D%22m26.81%205q-3.3238%205.7051-4.9361%2011.286-1.6123%205.5811-1.6123%2011.311t1.6123%2011.361q1.6371%205.6059%204.9361%2011.286h-3.9688q-3.7207-5.8291-5.5811-11.46-1.8355-5.6307-1.8355-11.187%200-5.5314%201.8355-11.137%201.8355-5.6059%205.5811-11.46z%22%2F%3E%3Cpath%20transform%3D%22translate(-4.6085%20-4.7969)%22%20d%3D%22m28.048%205h3.9688q3.7207%205.8539%205.5562%2011.46%201.8604%205.6059%201.8604%2011.137%200%205.5562-1.8604%2011.187-1.8355%205.6307-5.5562%2011.46h-3.9688q3.299-5.6803%204.9113-11.286%201.6371-5.6307%201.6371-11.361%200-5.7299-1.6371-11.311-1.6123-5.5811-4.9113-11.286z%22%2F%3E%3Cpath%20transform%3D%22translate(-4.6085%20-4.7969)%22%20d%3D%22m27.334%2012.02q-0.76602%200-1.2111%200.60039-0.44512%200.59522-0.44512%201.6355t0.43994%201.6407q0.44512%200.59522%201.2163%200.59522%200.76084%200%201.206-0.60039%200.44512-0.60039%200.44512-1.6355%200-1.03-0.44512-1.6304-0.44512-0.60557-1.206-0.60557zm0-0.80742q1.2422%200%201.9513%200.80742%200.70908%200.80742%200.70908%202.2359%200%201.4233-0.70908%202.2359-0.70908%200.80742-1.9513%200.80742-1.2474%200-1.9564-0.80742-0.70391-0.8126-0.70391-2.2359%200-1.4285%200.70391-2.2359%200.70908-0.80742%201.9564-0.80742z%22%2F%3E%3Cpath%20transform%3D%22rotate(-45%20-8.0946%203.1645)%22%20d%3D%22m-2.3789%2068.649-7.0693-18.517h2.6169l5.8663%2015.59%205.8787-15.59h2.6045l-7.0569%2018.517z%22%2F%3E%3Cpath%20transform%3D%22rotate(45%203.4861%20-7.9614)%22%20d%3D%22m38.342%2029.858-7.07-18.517h2.6169l5.8663%2015.59%205.8787-15.59h2.6045l-7.0569%2018.517z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"/>
+</head>
 
-      html {
-        font-family: 'Open Sans', sans-serif;
-        background: url(pattern.png);
-      }
+<style type="text/css">
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
 
-      body {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        background-color: white;
-        position: relative;
-      }
+  *, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  html {
+    height: 100%; /* Fallback CSS for IE 4-6 and older browsers. Note: Without this setting, body below cannot achieve 100% height. */
+    height: 100vh;/* Overrides 100% height in modern HTML5 browsers and uses the viewport's height. Only works in modern HTML5 browsers */
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    height: auto; /* Allows content to grow beyond the page without overflow */
+    width: auto; /* Allows content to grow beyond the page without overflow */
+    min-height: 100%; /* Starts web page with 100% height. Fallback for IE 4-6 and older browsers */
+    min-height: 100vh;/* Starts web page with 100% height. Uses the viewport's height. Only works in modern HTML5 browsers */
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: black;
+  }
 
-      /* Header styling */
+/* cContainer holds bg image and container */
+/* container holds text */
+.cContainer {
+  position: absolute;
+}
+/* WHITESPACE prevent above, below bgImg */
+.container:before,
+.container:after
+{
+  display: table;
+  content: " ";
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+}
+/* https://css-tricks.com/perfect-full-page-background-image/ */
+.bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+}
+.bg svg {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width:  50%;
+  min-height: 50%;
+}
 
-      header {
-        height: 150px;
-      }
+/* TEXT ELEMENTS ********************************************************************************************** */
+h1, h2, h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--clrBright);
+  text-align: center;
+}
+h1 { font-size: 2.00rem; }
+h2 { font-size: 1.50rem; }
+h3 { font-size: 1.17rem; }
+/* h4 { font-size: 1.00em; } */
+p  { font-size: 1.00rem; }
+p {
+  font-family: "Times New Roman", Georgia, Times, serif;
+  color: var(--clrBasic);
+  padding: 8px 0px; /* top&bottom, right&left */
+  margin: 0;
+  text-indent: 3rem;
+  line-height: 1.75rem;
+}
+@media (min-width:    1px) { p { text-align: left; } }
+@media (min-width:  520px) { p { text-align: justify; } }
+p.noIndent {
+  text-indent: 0rem;
+}
+.diceFS {
+  /* 1.45em dice same height as numbers */
+  font-size:1.45em;
+  line-height: 0rem; /* else entire line adopts line-height of larger font size text*/
+}
+.hero  { 
+  display:-webkit-box; 
+  display:-ms-flexbox; 
+  display:flex; 
+  -ms-flex-pack: distribute; 
+  justify-content: space-around; /* | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe; */
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 
-      header img {
-        width: 100px;
-        position: absolute;
-        right: 32.5px;
-        top: 32.5px;
-      }
+/* COLORS ************************************************************** */
+:root {  
+        /*
+        color schedule based on slategrey HSL definition
+        LightSlateGray hsl(210, 14%, 53%)
+        SlateGray      hsl(210, 13%, 50%)
+        DarkSlateGray  hsl(180, 25%, 25%)
+        */
+  --clrBright: hsl(210 13% 70% / 100%); /* h1 h2 h3 */
+  --clrBasic:  hsl(210 13% 60% / 100%); /* p */ /* svgRocket as rgb(140,153,166)*/
+  --clrDim:    hsl(210 13% 25% / 100%); /* graph grid */
+}
+div.blackBlur {
+  background-color: rgba(0, 0, 0, 0.45); /* Black */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
 
-      h1 {
-        font-size: 50px;
-        line-height: 140px;
-        margin: 0 0 0 32.5px;
-      }
+/* SIZING ************************************************************** */
+@media( min-width:   1px ){ .container { padding-right: 0.2rem; padding-left:  0.2rem; } }
+@media( min-width: 420px ){ .container { padding-right: 1rem; padding-left:  1rem; } }
+@media (min-width:    1px) { .container { width: 99.5%; } }
+@media (min-width:  992px) { .container { width: 50rem; } }
 
-      /* main section and video styling */
+/* FONT SIZE ************************************************************** */
+/* media queries set rem unit, containers given value in rem units, elements inside container given value in em units */
+html { font-size: clamp( 16px, calc(15px + 0.390625vw), 25px );}
 
-      main {
-        background: #ccc;
-      }
+/* TABLE ********************************************************************************************** */
+table {
+  font-size: 0.90rem; /* 1rem makes grid expand, beyond container width, causing <p> to flow offscreen */
+  width: 100%;
+  color: var(--clrBasic);
+  text-align: center;
+  border-collapse: collapse;
+  margin: 1rem auto;
+  padding: 0;
+}
+table td { 
+  text-align: center; 
+  vertical-align: middle;
+  border: 2px solid var(--clrDim);
+}
 
-      article {
-        padding: 20px;
-      }
+table.cTblDice { table-layout: auto;  }
+table.cTblOdds { table-layout: fixed; }
 
-      h2 {
-        margin-top: 0;
-      }
+table.cTblDice { font-family: monospace; } /* so can use   to center cell contents */ 
+table.cTblOdds { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-      p {
-        line-height: 2;
-      }
+table.cTblDice td {
+  padding-bottom: 0.2em;
+}
 
-      iframe {
-        float: left;
-        margin: 0 20px 20px 0;
-        max-width: 100%;
-      }
+@media( min-width: 1px ){ 
+  table.cTblDice td {
+    /* small to fit narrowest displays */
+    font-size: 1em;
+  }
+}
+@media( min-width: 520px ){ 
+  table.cTblDice td {
+    /* 1.45em dice same height as numbers */
+    font-size:1.45em;
+  }
+}
 
-      /* further info links */
+/* TABLE ODDS ********************************************************* */
+@media( min-width: 1px ){ 
+  table.cTblOdds {
+    font-size: 0.6rem;
+  }
+}
+@media( min-width: 420px ){ 
+  table.cTblOdds {
+    font-size: 0.7rem;
+  }
+}
+@media( min-width: 520px ){ 
+  table.cTblOdds {
+    font-size: 1rem;
+  }
+}
 
-      .further-info {
-        clear: left;
-        padding: 40px 0;
-        background: #c13832;
-        box-shadow: inset 0 3px 2px rgba(0,0,0,0.5),
-                    inset 0 -3px 2px rgba(0,0,0,0.5);
-      }
+table.cTblOdds td {
+  padding-top:    0.375rem;
+  padding-bottom: 0.300rem;
+}
 
-      .further-info a {
-        width: 25%;
-        display: block;
-        float: left;
-      }
+/* emphasize first col first row cuz labels */
+table.cTblOdds tr:nth-child(1),
+table.cTblOdds tr td:nth-child(1) {
+  color: var(--clrBright);
+  font-weight: bold;
+}
 
-      .further-info img {
-        max-width: 100%;
-      }
+/* FRACTION ********************************************************************************************** */
+p.cFraction {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-indent: 0px;
+  text-align: center;
+  margin: auto;
+}
+span.frac {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+span.frac > sup, span.frac > sub {
+  display: block;
+  font: inherit;
+  padding: 0;
+}
+span.frac > sup {border-bottom: 0.08rem solid;}
+span.frac > span {display: none;}
+</style>
 
-      .clearfix {
-        clear: both;
-      }
+<!-- /* HTML ***************************************************************************************** */ -->
+<body>
+  <div class="_bg cContainer">
 
-      /* Red panda image */
+    <!-- STARSCAPE -->
+    <div class="bg">
+      <!-- svg will be populated by javascript -->
+      <!-- https://css-tricks.com/scale-svg/ -->
+      <svg class="svg" id="svgOne" viewBox="0 0 1000 600" width="1000" height="600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs id="definitions"></defs>
+        <rect x="0" y="0" width="1000" height="600" fill="black" />
+      </svg>
+    </div> <!-- class="bg"> -->
 
-      .red-panda img {
-        display: block;
-        max-width: 100%;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Mozilla</h1>
-      <!-- insert <img> element, link to the small
-          version of the Firefox logo -->
-      <img
-      src="images/firefox-logo-120.png"
-      alt="The Firefox Logo"
-      width="120" />
-      <!--
-      if add
-      height="90" />
-      then get aspect ratio distortion (skinny)
-      both 120 and 90 from: file browser. properties. image.
-      -->
-    </header>
+    <!-- CONTAINER TEXT -->
+    <div class="container blackBlur">
+      <div class="hero"> <!-- hero -->
+        <div class="heroL">
+          <img src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2283%22%20width%3D%2283%22%20version%3D%221.1%22%20viewBox%3D%220%200%2045.65%2045.65%22%3E%3Cg%20style%3D%22fill%3Argb(140%2C153%2C166%22%3E%3Cpath%20transform%3D%22translate(-4.6085%20-4.7969)%22%20d%3D%22m26.81%205q-3.3238%205.7051-4.9361%2011.286-1.6123%205.5811-1.6123%2011.311t1.6123%2011.361q1.6371%205.6059%204.9361%2011.286h-3.9688q-3.7207-5.8291-5.5811-11.46-1.8355-5.6307-1.8355-11.187%200-5.5314%201.8355-11.137%201.8355-5.6059%205.5811-11.46z%22%2F%3E%3Cpath%20transform%3D%22translate(-4.6085%20-4.7969)%22%20d%3D%22m28.048%205h3.9688q3.7207%205.8539%205.5562%2011.46%201.8604%205.6059%201.8604%2011.137%200%205.5562-1.8604%2011.187-1.8355%205.6307-5.5562%2011.46h-3.9688q3.299-5.6803%204.9113-11.286%201.6371-5.6307%201.6371-11.361%200-5.7299-1.6371-11.311-1.6123-5.5811-4.9113-11.286z%22%2F%3E%3Cpath%20transform%3D%22translate(-4.6085%20-4.7969)%22%20d%3D%22m27.334%2012.02q-0.76602%200-1.2111%200.60039-0.44512%200.59522-0.44512%201.6355t0.43994%201.6407q0.44512%200.59522%201.2163%200.59522%200.76084%200%201.206-0.60039%200.44512-0.60039%200.44512-1.6355%200-1.03-0.44512-1.6304-0.44512-0.60557-1.206-0.60557zm0-0.80742q1.2422%200%201.9513%200.80742%200.70908%200.80742%200.70908%202.2359%200%201.4233-0.70908%202.2359-0.70908%200.80742-1.9513%200.80742-1.2474%200-1.9564-0.80742-0.70391-0.8126-0.70391-2.2359%200-1.4285%200.70391-2.2359%200.70908-0.80742%201.9564-0.80742z%22%2F%3E%3Cpath%20transform%3D%22rotate(-45%20-8.0946%203.1645)%22%20d%3D%22m-2.3789%2068.649-7.0693-18.517h2.6169l5.8663%2015.59%205.8787-15.59h2.6045l-7.0569%2018.517z%22%2F%3E%3Cpath%20transform%3D%22rotate(45%203.4861%20-7.9614)%22%20d%3D%22m38.342%2029.858-7.07-18.517h2.6169l5.8663%2015.59%205.8787-15.59h2.6045l-7.0569%2018.517z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E'>
+        </div>
+        <div class="heroC">
+          <h1>Space&nbsp;Base, Basic&nbsp;Odds</h1>
+          <h3>Which sector is most likely to score?</h3>
+          <h3>Buy Sector&nbsp;[6] ship paying one, or&nbsp;[7]&nbsp;paying&nbsp;three?</h3>
+        </div>
+        <div class="heroR">
+          <img src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2283%22%20width%3D%2283%22%20version%3D%221.1%22%20viewBox%3D%220%200%2045.65%2045.65%22%3E%3Cg%20style%3D%22fill%3Argb(140%2C153%2C166%22%3E%3Cpath%20transform%3D%22translate(-4.6085%20-4.7969)%22%20d%3D%22m26.81%205q-3.3238%205.7051-4.9361%2011.286-1.6123%205.5811-1.6123%2011.311t1.6123%2011.361q1.6371%205.6059%204.9361%2011.286h-3.9688q-3.7207-5.8291-5.5811-11.46-1.8355-5.6307-1.8355-11.187%200-5.5314%201.8355-11.137%201.8355-5.6059%205.5811-11.46z%22%2F%3E%3Cpath%20transform%3D%22translate(-4.6085%20-4.7969)%22%20d%3D%22m28.048%205h3.9688q3.7207%205.8539%205.5562%2011.46%201.8604%205.6059%201.8604%2011.137%200%205.5562-1.8604%2011.187-1.8355%205.6307-5.5562%2011.46h-3.9688q3.299-5.6803%204.9113-11.286%201.6371-5.6307%201.6371-11.361%200-5.7299-1.6371-11.311-1.6123-5.5811-4.9113-11.286z%22%2F%3E%3Cpath%20transform%3D%22translate(-4.6085%20-4.7969)%22%20d%3D%22m27.334%2012.02q-0.76602%200-1.2111%200.60039-0.44512%200.59522-0.44512%201.6355t0.43994%201.6407q0.44512%200.59522%201.2163%200.59522%200.76084%200%201.206-0.60039%200.44512-0.60039%200.44512-1.6355%200-1.03-0.44512-1.6304-0.44512-0.60557-1.206-0.60557zm0-0.80742q1.2422%200%201.9513%200.80742%200.70908%200.80742%200.70908%202.2359%200%201.4233-0.70908%202.2359-0.70908%200.80742-1.9513%200.80742-1.2474%200-1.9564-0.80742-0.70391-0.8126-0.70391-2.2359%200-1.4285%200.70391-2.2359%200.70908-0.80742%201.9564-0.80742z%22%2F%3E%3Cpath%20transform%3D%22rotate(-45%20-8.0946%203.1645)%22%20d%3D%22m-2.3789%2068.649-7.0693-18.517h2.6169l5.8663%2015.59%205.8787-15.59h2.6045l-7.0569%2018.517z%22%2F%3E%3Cpath%20transform%3D%22rotate(45%203.4861%20-7.9614)%22%20d%3D%22m38.342%2029.858-7.07-18.517h2.6169l5.8663%2015.59%205.8787-15.59h2.6045l-7.0569%2018.517z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E'>
+        </div>
+      </div> <!-- hero -->
+      <p>
+        Spacebase is a dice game (overview: 
+        <a href="https://boardgamegeek.com/boardgame/242302/space-base/" title="Overview at Board Game Geek">Board Game Geek</a>, 
+        manufacturer: 
+        <a href="https://www.alderac.com/space-base/" title="Made by Alderac">Alderac</a>, 
+        play free: 
+        <a href="https://boardgamearena.com/" title="Play Free at Board Game Arena">Board Game Arena</a>)
+        with an interesting scoring mechanic. Players roll two six-sided dice and choose to score either as a single sum or as two faces. For instance, a player rolling <span class="diceFS">⚂</span> and <span class="diceFS">⚃</span> chooses to score either on "Sector" [7] alone or on both Sector&nbsp;[3] and [4]. This article presents the calculation of probability for each sector, and a method to compare different ships in different sectors paying different rewards.</p>
 
-    <main>
-      <article>
-        <!-- insert iframe from youtube 
-          https://www.youtube.com/watch?v=ojcNcvb1olg
-          youtube iframe code works as supplied
-          chance w to 400 ok
-          del hgt ok
-          add "sandbox" get error!
-          #
-          validate
-          https://validator.w3.org/
-          The frameborder attribute on the iframe element is obsolete.
-          delete:
-          frameborder="0" 
-          looks the same!
-        -->
+        <p>The probability of an event is the ratio of the number of all possible successful outcomes to the number of all possible outcomes. All 36 possible outcomes for two dice are shown in the table below, and all possible successful scores on sector [5] (arbitrary example) are bracketed.</p>
 
-        <iframe width="400" height="315" src="https://www.youtube.com/embed/ojcNcvb1olg?si=aLx8kaBakijBjKeH" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!-- TABLE DICE 36perm -->
+        <!-- table html made in spreadsheet -->
+        <!-- monospace font and &nbsp for centering -->
+        <table class="cTblDice">
+          <tbody>
+            <tr><td>&nbsp;⚀&nbsp;⚀&nbsp;</td><td>&nbsp;⚁&nbsp;⚀&nbsp;</td><td>&nbsp;⚂&nbsp;⚀&nbsp;</td><td>{⚃&nbsp;⚀}</td><td>(⚄)&nbsp;⚀&nbsp;</td><td>&nbsp;⚅&nbsp;⚀&nbsp;</td></tr>
+            <tr><td>&nbsp;⚀&nbsp;⚁&nbsp;</td><td>&nbsp;⚁&nbsp;⚁&nbsp;</td><td>{⚂&nbsp;⚁}</td><td>&nbsp;⚃&nbsp;⚁&nbsp;</td><td>(⚄)&nbsp;⚁&nbsp;</td><td>&nbsp;⚅&nbsp;⚁&nbsp;</td></tr>
+            <tr><td>&nbsp;⚀&nbsp;⚂&nbsp;</td><td>{⚁&nbsp;⚂}</td><td>&nbsp;⚂&nbsp;⚂&nbsp;</td><td>&nbsp;⚃&nbsp;⚂&nbsp;</td><td>(⚄)&nbsp;⚂&nbsp;</td><td>&nbsp;⚅&nbsp;⚂&nbsp;</td></tr>
+            <tr><td>{⚀&nbsp;⚃}</td><td>&nbsp;⚁&nbsp;⚃&nbsp;</td><td>&nbsp;⚂&nbsp;⚃&nbsp;</td><td>&nbsp;⚃&nbsp;⚃&nbsp;</td><td>(⚄)&nbsp;⚃&nbsp;</td><td>&nbsp;⚅&nbsp;⚃&nbsp;</td></tr>
+            <tr><td>&nbsp;⚀(⚄)</td><td>&nbsp;⚁(⚄)</td><td>&nbsp;⚂(⚄)</td><td>&nbsp;⚃(⚄)</td><td>(⚄)(⚄)</td><td>&nbsp;⚅(⚄)</td></tr>
+            <tr><td>&nbsp;⚀&nbsp;⚅&nbsp;</td><td>&nbsp;⚁&nbsp;⚅&nbsp;</td><td>&nbsp;⚂&nbsp;⚅&nbsp;</td><td>&nbsp;⚃&nbsp;⚅&nbsp;</td><td>(⚄)&nbsp;⚅&nbsp;</td><td>&nbsp;⚅&nbsp;⚅&nbsp;</td></tr>
+          </tbody>
+        </table>
 
-        <h2>Rocking the free web</h2>
+        <p>In the table above, rolls summing to 5 which score on Sector&nbsp;[5] are {curly} bracketed. Four such sums occur. Faces with 5 pips which score on Sector&nbsp;[5] are [square] bracketed. Twelve such faces occur. Those successful four and twelve outcomes are summed to 16, and then divided by 36, the number of all possible outcomes. The percent probability of scoring Sector&nbsp;[5] is calculated as:</p>
 
-        <p>Mozilla are a global community of technologists, thinkers, and builders, working together to keep the Internet alive and accessible, so people worldwide can be informed contributors and creators of the Web. We believe this act of human collaboration across an open platform is essential to individual growth and our collective future.</p>
+        <!-- EQUATION -->
+        <!-- ea subsequent char rendered little bit higher than preceeding. why? -->
+        <p class="cFraction">
+          <span class="frac">
+            <sup>{4&nbsp;sums}&nbsp;+&nbsp;(12&nbsp;faces)</sup>
+            <span>&frasl;</span>
+            <sub>36</sub>
+          </span>
+          &nbsp;=&nbsp;
+          <span class="frac">
+            <sup>16</sup>
+            <span>&frasl;</span>
+            <sub>36</sub>
+          </span>
+          &nbsp;=&nbsp;44%
+        </p>
 
-        <p>Click on the images below to find more information about the cool stuff Mozilla does. <a href="https://www.flickr.com/photos/mathiasappel/21675551065/">Red panda picture</a> by Mathias Appel.</p>
-      </article>
+        <p class="noIndent">Sector&nbsp;[5] effectively scores on 44% of rolls. Each sector's probability is shown in the second to last "%" row in the table below.</p>
 
-      <div class="further-info">
-        <!-- insert images with srcsets and sizes 
-        src, alt, srcset and sizes attributes.
-        serve the 120px wide version when the viewport width is 500px wide or less, or the 400px wide version otherwise.
+        <!-- TABLE ODDS -->
+        <!-- table html made in spreadsheet -->
+        <table class="cTblOdds">
+          <tbody>
+            <tr><td>Sect</td><td>[1]</td><td>[2]</td><td>[3]</td><td>[4]</td><td>[5]</td><td>[6]</td><td>[7]</td><td>[8]</td><td>[9]</td><td>[10]</td><td>[11]</td><td>[12]</td></tr>
+            <tr><td>Face</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>Sum</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td></tr>
+            <tr><td>F+S</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td></tr>
+            <tr><td>%</td><td>33</td><td>36</td><td>39</td><td>42</td><td>44</td><td>47</td><td>17</td><td>14</td><td>11</td><td>8.3</td><td>5.6</td><td>2.8</td></tr>
+            <tr><td>EP</td><td>1.4</td><td>1.3</td><td>1.2</td><td>1.1</td><td>1.1</td><td>1.0</td><td>2.8</td><td>3.4</td><td>4.3</td><td>5.7</td><td>8.5</td><td>17</td></tr>
+          </tbody>
+        </table>
 
-        Note: To properly test the srcset/sizes examples, you'll need to upload your site to a server (using GitHub pages is an easy and free solution), then from there you can test whether they are working properly using browser developer tools such as the Firefox Network Monitor.
-        -->
-        <a href="https://www.mozilla.org/en-US/firefox/new/">
-          <img
-            srcset="images/firefox-logo-120.png 120w, images/firefox-logo-400.png 400w"
-            sizes="(max-width: 500px) 120px, 400px"
-            src="images/firefox-logo-400.png"
-            alt="Firefox Logo" />
-        </a>
-        <a href="https://www.mozilla.org/">
-          <img
-            srcset="images/mozilla-dinosaur-head-120.png 120w, images/mozilla-dinosaur-head-400.png 400w"
-            sizes="(max-width: 500px) 120px, 400px"
-            src="images/mozilla-dinosaur-head-400.png"
-            alt="Mozilla Dinosaur Head Logo" />
-        </a>
-        <a href="https://addons.mozilla.org/">
-          <img
-            srcset="images/firefox-addons-120.jpg 120w, images/firefox-addons-400.jpg 400w"
-            sizes="(max-width: 500px) 120px, 400px"
-            src="images/firefox-addons-400.jpg"
-            alt="Firefox Logo" />
-        </a>
-        <a href="https://developer.mozilla.org/en-US/">
-          <img
-            src="images/mdn.svg"
-            alt="MDN Logo" />
-        </a>
-        <div class="clearfix"></div>
-      </div>
+        <p>Sectors are compared using the "%" probability row. Sector&nbsp;[6] is seen to be the most likely sector to score, answering the first question posed in the beginning of this article. Sector&nbsp;[6] is only slightly more likely than Sector&nbsp;[5], but is almost three times as likely as Sector&nbsp;[7]. The great impact of the ability to choose faces is seen by comparing Sector&nbsp;[2] and [12]; snake-eyes and box-cars are equally likely, but scoring Sector&nbsp;[2] is ten times more likely than Sector&nbsp;[12].</p>
 
-      <div class="red-panda">
+        <p>
+          The Equal Payout ("EP") row is useful for comparing ships in different sectors paying different rewards. The values are normalized to unit Sector&nbsp;[6] by dividing Sector&nbsp;[6] "F+S" by each sector's "F+S". The values are the awards necessary for each sector to payout equally. A sector [6] ship with a single (coin, rocket, planet) award will payout equal to a sector [12] ship paying seventeen (after an infinite number of rolls). 
+        </p>
 
-        <!-- insert picture element 
-          serves the small portrait panda image if the viewport is 600px wide or less, and the large landscape image otherwise
-        -->
+        <p>
+          The shape of the Equal Payout graph below is perhaps easier to recall than a list of values.
+        </p>
 
-        <picture>
-          <source media="(max-width: 600px)" srcset="images/red-panda-600.jpg" />
-          <img src="images/red-panda-1200.jpg" alt="Picture Of A Red Panda" />
-        </picture>
+        <!-- GRAPH ------------------------------------------------------------------------------------- -->
+        <!-- --------------------------------------------------------------------------------- -->
+<!-- responsive as so:
+  width of graph stretches a bunch to full vw. lots of travel
+  height of graph only stretches enug to accomadate font increase
+-->
+<div class="cGraph">
+  <div class="graph">
 
-      </div>
+    <!-- label -->
+    <div class="text textLabelX"      style="right: var(--labelX2R); bottom: var(--labelX2B); ">SECTOR</div>
+    <div class="text textLabelY"      style="left:  var(--labelY2L); top:    var(--labelY2T); ">EQUAL PAYOUT</div>
 
-    </main>
-  </body>
-</html>
+    <!-- scale X -->
+    <div class="text textScaleX"         style="right: calc(12 * var(--gridSpaceWidth) ); bottom: var(--scaleX2B);">1</div>
+    <div class="text textScaleX"         style="right: calc(11 * var(--gridSpaceWidth) ); bottom: var(--scaleX2B);">2</div>
+    <div class="text textScaleX"         style="right: calc(10 * var(--gridSpaceWidth) ); bottom: var(--scaleX2B);">3</div>
+    <div class="text textScaleX"         style="right: calc( 9 * var(--gridSpaceWidth) ); bottom: var(--scaleX2B);">4</div>
+    <div class="text textScaleX"         style="right: calc( 8 * var(--gridSpaceWidth) ); bottom: var(--scaleX2B);">5</div>
+    <div class="text textScaleX"         style="right: calc( 7 * var(--gridSpaceWidth) ); bottom: var(--scaleX2B);">6</div>
+    <div class="text textScaleX"         style="right: calc( 6 * var(--gridSpaceWidth) ); bottom: var(--scaleX2B);">7</div>
+    <div class="text textScaleX"         style="right: calc( 5 * var(--gridSpaceWidth) ); bottom: var(--scaleX2B);">8</div>
+    <div class="text textScaleX"         style="right: calc( 4 * var(--gridSpaceWidth) ); bottom: var(--scaleX2B);">9</div>
+    <div class="text textScaleX"         style="right: calc( 3 * var(--gridSpaceWidth) ); bottom: var(--scaleX2B);">10</div>
+    <div class="text textScaleX _eleven"  style="right: calc( 2 * var(--gridSpaceWidth) ); bottom: var(--scaleX2B);">11</div>
+    <div class="text textScaleX"         style="right: calc( 1 * var(--gridSpaceWidth) ); bottom: var(--scaleX2B);">12</div>
+
+    <!-- scale Y -->
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc( 1 * var(--gridSpaceHeight) ); ">17</div>
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc( 2 * var(--gridSpaceHeight) ); ">16</div>
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc( 3 * var(--gridSpaceHeight) ); ">15</div>
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc( 4 * var(--gridSpaceHeight) ); ">14</div>
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc( 5 * var(--gridSpaceHeight) ); ">13</div>
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc( 6 * var(--gridSpaceHeight) ); ">12</div>
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc( 7 * var(--gridSpaceHeight) ); ">11</div>
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc( 8 * var(--gridSpaceHeight) ); ">10</div>
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc( 9 * var(--gridSpaceHeight) ); ">&nbsp;9</div>
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc(10 * var(--gridSpaceHeight) ); ">&nbsp;8</div>
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc(11 * var(--gridSpaceHeight) ); ">&nbsp;7</div>
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc(12 * var(--gridSpaceHeight) ); ">&nbsp;6</div>
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc(13 * var(--gridSpaceHeight) ); ">&nbsp;5</div>
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc(14 * var(--gridSpaceHeight) ); ">&nbsp;4</div>
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc(15 * var(--gridSpaceHeight) ); ">&nbsp;3</div>
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc(16 * var(--gridSpaceHeight) ); ">&nbsp;2</div>
+    <div class="text textScaleY"  style="left: var(--scaleY2L); top: calc(17 * var(--gridSpaceHeight) ); ">&nbsp;1</div>
+
+    <!-- ruler Y horizontal lines -->
+    <div class="rulerHoriz"  style="right: 0%; top: calc( 1 * var(--gridSpaceHeight) ); "></div>
+    <div class="rulerHoriz"  style="right: 0%; top: calc( 2 * var(--gridSpaceHeight) ); "></div>
+    <div class="rulerHoriz"  style="right: 0%; top: calc( 3 * var(--gridSpaceHeight) ); "></div>
+    <div class="rulerHoriz"  style="right: 0%; top: calc( 4 * var(--gridSpaceHeight) ); "></div>
+    <div class="rulerHoriz"  style="right: 0%; top: calc( 5 * var(--gridSpaceHeight) ); "></div>
+    <div class="rulerHoriz"  style="right: 0%; top: calc( 6 * var(--gridSpaceHeight) ); "></div>
+    <div class="rulerHoriz"  style="right: 0%; top: calc( 7 * var(--gridSpaceHeight) ); "></div>
+    <div class="rulerHoriz"  style="right: 0%; top: calc( 8 * var(--gridSpaceHeight) ); "></div>
+    <div class="rulerHoriz"  style="right: 0%; top: calc( 9 * var(--gridSpaceHeight) ); "></div>
+    <div class="rulerHoriz"  style="right: 0%; top: calc(10 * var(--gridSpaceHeight) ); "></div>
+    <div class="rulerHoriz"  style="right: 0%; top: calc(11 * var(--gridSpaceHeight) ); "></div>
+    <div class="rulerHoriz"  style="right: 0%; top: calc(12 * var(--gridSpaceHeight) ); "></div>
+    <div class="rulerHoriz"  style="right: 0%; top: calc(13 * var(--gridSpaceHeight) ); "></div>
+    <div class="rulerHoriz"  style="right: 0%; top: calc(14 * var(--gridSpaceHeight) ); "></div>
+    <div class="rulerHoriz"  style="right: 0%; top: calc(15 * var(--gridSpaceHeight) ); "></div>
+    <div class="rulerHoriz"  style="right: 0%; top: calc(16 * var(--gridSpaceHeight) ); "></div>
+    <div class="rulerHoriz"  style="right: 0%; top: calc(17 * var(--gridSpaceHeight) ); "></div>
+
+    <!-- ruler X vertical lines -->
+    <div class="rulerVert"  style="right: calc( 1 * var(--gridSpaceWidth) ); top: 0%;"></div>
+    <div class="rulerVert"  style="right: calc( 2 * var(--gridSpaceWidth) ); top: 0%;"></div>
+    <div class="rulerVert"  style="right: calc( 3 * var(--gridSpaceWidth) ); top: 0%;"></div>
+    <div class="rulerVert"  style="right: calc( 4 * var(--gridSpaceWidth) ); top: 0%;"></div>
+    <div class="rulerVert"  style="right: calc( 5 * var(--gridSpaceWidth) ); top: 0%;"></div>
+    <div class="rulerVert"  style="right: calc( 6 * var(--gridSpaceWidth) ); top: 0%;"></div>
+    <div class="rulerVert"  style="right: calc( 7 * var(--gridSpaceWidth) ); top: 0%;"></div>
+    <div class="rulerVert"  style="right: calc( 8 * var(--gridSpaceWidth) ); top: 0%;"></div>
+    <div class="rulerVert"  style="right: calc( 9 * var(--gridSpaceWidth) ); top: 0%;"></div>
+    <div class="rulerVert"  style="right: calc(10 * var(--gridSpaceWidth) ); top: 0%;"></div>
+    <div class="rulerVert"  style="right: calc(11 * var(--gridSpaceWidth) ); top: 0%;"></div>
+    <div class="rulerVert"  style="right: calc(12 * var(--gridSpaceWidth) ); top: 0%;"></div>
+
+    <!-- grid Y horizontal lines -->
+    <div class="gridHoriz"  style="right: 0%; top: calc( 0 * var(--gridSpaceHeight) ); "></div>
+    <div class="gridHoriz"  style="right: 0%; top: calc(18 * var(--gridSpaceHeight) ); "></div>
+
+    <!-- grid X vertical lines -->
+    <div class="gridVert"  style="right: calc( 0 * var(--gridSpaceWidth) ); top: 0%;"></div>
+    <div class="gridVert"  style="right: calc(13 * var(--gridSpaceWidth) ); top: 0%;"></div>
+
+    <!-- data points -->
+    <!-- bottom (instead of top), y values used more directly -->
+    <div class="dataDot"  style="right: calc(12 * var(--gridSpaceWidth) ); bottom: calc(var(--data01) * var(--gridSpaceHeight) + var(--dataB) );"></div>
+    <div class="dataDot"  style="right: calc(11 * var(--gridSpaceWidth) ); bottom: calc(var(--data02) * var(--gridSpaceHeight) + var(--dataB) );"></div>
+    <div class="dataDot"  style="right: calc(10 * var(--gridSpaceWidth) ); bottom: calc(var(--data03) * var(--gridSpaceHeight) + var(--dataB) );"></div>
+    <div class="dataDot"  style="right: calc( 9 * var(--gridSpaceWidth) ); bottom: calc(var(--data04) * var(--gridSpaceHeight) + var(--dataB) );"></div>
+    <div class="dataDot"  style="right: calc( 8 * var(--gridSpaceWidth) ); bottom: calc(var(--data05) * var(--gridSpaceHeight) + var(--dataB) );"></div>
+    <div class="dataDot"  style="right: calc( 7 * var(--gridSpaceWidth) ); bottom: calc(var(--data06) * var(--gridSpaceHeight) + var(--dataB) );"></div>
+    <div class="dataDot"  style="right: calc( 6 * var(--gridSpaceWidth) ); bottom: calc(var(--data07) * var(--gridSpaceHeight) + var(--dataB) );"></div>
+    <div class="dataDot"  style="right: calc( 5 * var(--gridSpaceWidth) ); bottom: calc(var(--data08) * var(--gridSpaceHeight) + var(--dataB) );"></div>
+    <div class="dataDot"  style="right: calc( 4 * var(--gridSpaceWidth) ); bottom: calc(var(--data09) * var(--gridSpaceHeight) + var(--dataB) );"></div>
+    <div class="dataDot"  style="right: calc( 3 * var(--gridSpaceWidth) ); bottom: calc(var(--data10) * var(--gridSpaceHeight) + var(--dataB) );"></div>
+    <div class="dataDot"  style="right: calc( 2 * var(--gridSpaceWidth) ); bottom: calc(var(--data11) * var(--gridSpaceHeight) + var(--dataB) );"></div>
+    <div class="dataDot"  style="right: calc( 1 * var(--gridSpaceWidth) ); bottom: calc(var(--data12) * var(--gridSpaceHeight) + var(--dataB) );"></div>
+
+  </div> <!-- graph -->
+</div> <!-- cGraph -->
+
+<style type="text/css">
+
+/* LAYOUT */
+/* ruler = tics between scale numbers and grid*/
+/* scale = text numbers */
+/* label = "SECTOR", "EQUAL PAYOUT" */
+/* X,Y = graph axes */
+
+:root {
+  --graphHeight:      25em; 
+  --graphFontSize:    calc(1rem - 4px);
+  --dotDia:           0.5em;
+  --margin:           0.5em;
+
+  /* scale|label X|Y 1|2|3 used as length for positioning
+  /* 1|2|3   2 is text, 1&3 dont exist but values used for spacing */
+  /* for X: 1,2,3 is top to bottom. for Y: 1,2,3 is left to right */
+  --labelX1: 0.5em;
+  --labelX2: 1em;
+  --labelX3: 1em;
+  --labelY1: 0.5em;
+  --labelY2: 1em;
+  --labelY3: 1em;
+  --scaleX1: 0.25em;
+  --scaleX2: 1em;
+  --scaleX3: 1em;
+  --scaleY1: 0.5em;
+  --scaleY2: 1.25em; /* space for width double digits */
+  --scaleY3: 0em;
+  --ruler:   0.5em; /* scale w font, else different Horiz and Vert scales differently */
+
+  --gridAreaWidth:   calc(
+    100%
+    - var(--labelY1)  
+    - var(--labelY2)  
+    - var(--labelY3) 
+    - var(--scaleY1) 
+    - var(--scaleY2)  
+    - var(--scaleY3) 
+    - var(--ruler) 
+  );
+  --gridAreaHeight:   calc(
+    100%
+    - var(--ruler) 
+    - var(--scaleX1) 
+    - var(--scaleX2)  
+    - var(--scaleX3) 
+    - var(--labelX1) 
+    - var(--labelX2)  
+    - var(--labelX3) 
+  );
+
+  --gridNumSpaceHoriz:   13; /* num spaces. num grid lines 1 more than num spaces cuz bookending */
+  --gridNumSpaceVert:    18; /* num spaces. num grid lines 1 more than num spaces cuz bookending */
+
+  --gridSpaceWidth:      calc(var(--gridAreaWidth)  / (var(--gridNumSpaceHoriz))); /* length spaces inbetween gridlines */
+  --gridSpaceHeight:     calc(var(--gridAreaHeight) / (var(--gridNumSpaceVert) )); /* length spaces inbetween gridlines */
+
+  --labelX2B: var(--labelX3);
+  --labelX2R: calc( 0.5 * var(--gridAreaWidth) );
+
+  --labelY2L: var(--labelY1);
+  --labelY2T: calc( 0.5 * var(--gridAreaHeight) );
+
+  --scaleX2B: calc(
+    var(--scaleX3)
+    + var(--labelX1)
+    + var(--labelX2)
+    + var(--labelX3)
+  );
+  --scaleY2L: calc(
+    var(--scaleY1)
+    + var(--labelY1)
+    + var(--labelY2)
+    + var(--labelY3)
+  );
+
+  --dataB: calc( 
+    var(--ruler)    +
+    var(--scaleX1)  +
+    var(--scaleX2)  +
+    var(--scaleX3)  +
+    var(--labelX1)  +
+    var(--labelX2)  +
+    var(--labelX3)  
+  );
+/* equal payout data   dataX:Y;   dataX=Sector:Y=EQPay; */
+--data01: 1.4;
+--data02: 1.3;
+--data03: 1.2;
+--data04: 1.1;
+--data05: 1.1;
+--data06: 1.0;
+--data07: 2.8;
+--data08: 3.4;
+--data09: 4.3;
+--data10: 5.7;
+--data11: 8.5;
+--data12: 17;
+}
+</style>
+
+<style type="text/css">
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+  .cGraph {
+    position: relative;
+    height: calc(var(--graphHeight) + 2rem); /* where is margin coming from? */
+    outline: var(--clrDim) solid 2px;
+    margin-top:    0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0;
+    font-size: var(--graphFontSize);
+  }
+  .graph {
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: calc(100% - 2 * var(--margin));
+    height: var(--graphHeight);
+    margin: 0;
+    padding: 0;
+  }
+  .gridHoriz { /* right top */
+    position: absolute;
+    width: calc(2px + var(--gridAreaWidth));
+    height: 2px;
+    background-color: var(--clrBasic);
+    -webkit-transform: translateX(1px) translateY(-50%);
+    -ms-transform: translateX(1px) translateY(-50%);
+    transform: translateX(1px) translateY(-50%);
+  }
+  .gridVert { /* right top */
+    position: absolute;
+    width: 2px;
+    height: calc(2px + var(--gridAreaHeight));
+    background-color: var(--clrBasic);
+    -webkit-transform: translateX(50%) translateY(-1px);
+    -ms-transform: translateX(50%) translateY(-1px);
+    transform: translateX(50%) translateY(-1px);
+  }
+
+  .rulerHoriz { /* right top */
+    position: absolute;
+    width: calc(2px + var(--gridAreaWidth) + var(--ruler));
+    height: 2px;
+    background-color: var(--clrDim);
+    -webkit-transform: translateX(1px) translateY(-50%);
+    -ms-transform: translateX(1px) translateY(-50%);
+    transform: translateX(1px) translateY(-50%);
+    border-radius: 1px;
+  }
+  .rulerVert { /* right top */
+    position: absolute;
+    width: 2px;
+    height: calc(2px + var(--gridAreaHeight) + var(--ruler));
+    background-color: var(--clrDim);
+    -webkit-transform: translateX(50%) translateY(-1px);
+    -ms-transform: translateX(50%) translateY(-1px);
+    transform: translateX(50%) translateY(-1px);
+    border-radius: 1px;
+  }
+
+  .dataDot { /* right bottom */
+    position: absolute;
+    width:  var(--dotDia);
+    height: var(--dotDia);
+    border: 2px solid var(--clrBright);
+    border-radius: 50%;
+    -webkit-transform: translateX(50%) translateY(50%);
+    -ms-transform: translateX(50%) translateY(50%);
+    transform: translateX(50%) translateY(50%);
+  }
+  .text {
+    position: absolute;
+    color: var(--clrBasic);
+    font-size: 1em;
+  }
+  .textLabelX { /* right bottom */
+    -webkit-transform: translateX(50%) translateY(50%);
+    -ms-transform: translateX(50%) translateY(50%);
+    transform: translateX(50%) translateY(50%);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  .textLabelY { /* left top */
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+    transform: translateX(-50%) translateY(-50%) rotate(-90deg); /* order matters */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  .textScaleX { /* right bottom */
+    -webkit-transform: translateX(50%) translateY(50%);
+    -ms-transform: translateX(50%) translateY(50%);
+    transform: translateX(50%) translateY(50%);
+    font-family: monospace; /* cuz centering positioning */
+
+  }
+  .textScaleY { /* left top */
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    font-family: monospace; /* cuz centering positioning */
+  }
+
+  @media( min-width:   1px ){ .eleven { visibility: hidden;  } }
+  @media( min-width: 520px ){ .eleven { visibility: visible; } }
+</style>
+
+<p>The minimum value occurring at Sector&nbsp;[6] reflects its status as the most likely sector. The entire left hand half of the graph is nearly horizontal, showing sectors [1] thru [6] to be approximately equally likely. The game design reflects this two piece structure; different types of ships are available for Sector&nbsp;[1] thru [6] (ex., ships that use cubes to increase sum) than are available for Sector&nbsp;[7] thru [12] (ex., ships that activate adjacent sectors). A Sector&nbsp;[7] ship needs to pay out almost three awards (actual 2.8) to payout equal to a single award Sector&nbsp;[6] ship answering the second question posed in the beginning of this article. The higher number sectors curve upwards to a maximum of seventeen at sector [12]. Note the extreme curvature; Sector&nbsp;[12] requires double the award of Sector&nbsp;[11].</p>
+<p>Careful consideration of the fundamental probability structure discussed above will favorably inform any engine building strategy style.</p>
+<h3>Good Luck Commodore!</h3>
+
+</div> <!-- container -->
+
+<!-- https://stackoverflow.com/questions/12786797/draw-rectangles-dynamically-in-svg -->
+<script>
+  var xmlns = "http://www.w3.org/2000/svg";
+  var svgns = "http://www.w3.org/2000/svg";
+  var gradIdInc = 0;
+
+  function makePic(){
+    for (let step = 0; step < 20; step++) { makeDotSeriesParam( 15,  50,  5 ); }
+      for (let step = 0; step < 20; step++) { makeDotSeriesParam( 10,  50,  7 ); }
+        for (let step = 0; step < 20; step++) { makeDotSeriesParam(  5,  30,  9 ); }
+          for (let step = 0; step < 20; step++) { makeDotSeriesParam( 15,   7,  5 ); }
+            for (let step = 0; step < 20; step++) { makeDotSeriesParam( 10,   1, 40 ); }
+              for (let step = 0; step < 20; step++) { makeDotSeriesParam(  5, 0.5, 70 ); }
+                for (let step = 0; step < 20; step++) { makeDotSeriesParam(  5, 0.5, 90 ); }
+              }
+            makePic();
+
+            function makeDotSeriesParam(n, r, l) {
+  /* make new random params */
+  /* pass to recursive which calls fcn to make Dot */
+  /* r and l pass unchanged */
+              var x = Math.random() * 1000,
+              y = Math.random() *  600,
+              h = (240 +  60 * Math.random()),
+      s =  100, /* always 100% */
+              i = 0;
+              recursive(x, y, r, h, s, l, n, i);
+            }
+            function recursive(x, y, r, h, s, l, n, i) {
+  /*  make dot with received params then
+      random nudge params then
+      call itself to draw, nudge, repeat */ 
+              if (i < n) {
+                makeDotSingle(x, y, r, h, s, l);
+
+    /* next dot: move, enlarge, dim */
+    /* remove unnecessary decimals for performance */ 
+    x = x -  70 + ( 140 * Math.random()); /* +/- (75/1000% * width) */
+                x = Math.round(x);
+    y = y -  40 + (  80 * Math.random()); /* +/- (40/600% * width) */
+                y = Math.round(y);
+
+    r = r * ( rnd(0.75, 1.25) ); /* +/- 50% */
+                r = minmax(r, 0.5, 50);
+                r = (r).toFixed(1);
+
+    h = h -  6 + ( 12 * Math.random()); /* +/- (6=10% hue span) */
+                h = Math.round(h);
+
+    /* s = 100% always */
+    l = l * rnd(0.75, 1.25); /* +/- 25% */
+                l = minmax(l, 1, 100);
+                l = Math.round(l);
+
+    i++ /* recursions iterations */
+
+    recursive(x,y,r,h,s,l,n,i); /* recursive calls itself */
+              }
+            }
+/* make a single dot */
+            function makeDotSingle(x, y, r, h, s, l) {
+
+    /* MAKE DOT. fill = radial gradient, from transparent center to opaque black perimeter */
+              var circle = document.createElementNS(svgns, 'circle');
+              circle.setAttributeNS(null, 'cx', x);
+              circle.setAttributeNS(null, 'cy', y);
+              circle.setAttributeNS(null, 'r',  r);
+              circle.setAttributeNS(null, 'fill', 'url(#grad'+ gradIdInc +')');
+              document.getElementById('svgOne').appendChild(circle);
+
+    /* MAKE GRADIENTS */
+              var color = getColorString(h, s, l);
+              var grad = document.createElementNS(svgns, "radialGradient");
+              grad.setAttributeNS(null, "id", 'grad'+ gradIdInc );
+
+              var stopTop = document.createElementNS(svgns, "stop");
+              stopTop.setAttributeNS(null, "offset", "5%");
+              stopTop.setAttributeNS(null, "stop-color", color);
+              stopTop.setAttributeNS(null, "stop-opacity", "1");
+              grad.appendChild(stopTop);
+
+              var stopBottom = document.createElementNS(svgns, "stop");
+              stopBottom.setAttributeNS(null, "offset", "100%");
+              stopBottom.setAttributeNS(null, "stop-color", color);
+              stopBottom.setAttributeNS(null, "stop-opacity", "0");
+              grad.appendChild(stopBottom);
+              document.getElementById('definitions').appendChild(grad);
+
+              gradIdInc++;
+            }
+
+            function getColorString(h, s, l){ 
+              return "hsl(" + h + ',' + s + '%,' + l + '%)'
+            }
+            function rnd(min, max) {
+              return Math.random() * (max - min) + min;
+            }
+            function minmax(n, min, max) {
+              if (n < min) { n = min;} else 
+              if (n > max) { n = max;} 
+              return n;
+            }
+          </script>
+        </div>
+      </body>
+      </html>
+
